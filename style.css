@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #263746;
+    line-height: 1.6;
+}
+
+header {
+    background: #17324d;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+}
+
+nav a:hover {
+    color: #70d6c2;
+}
+
+.hero {
+    background: linear-gradient(120deg,#17324d,#287b83);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin: 20px;
+}
+
+.btn, button {
+    background: #2b9b89;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+section {
+    padding: 60px 8%;
+}
+
+section h2 {
+    color: #17324d;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #245b78;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    margin: 5px;
+    max-width: 100%;
+}
+
+#bookResults {
+    margin-top: 25px;
+}
+
+.book-item {
+    background: white;
+    padding: 18px;
+    margin: 10px 0;
+    border-radius: 9px;
+}
+
+.book-item small {
+    display: block;
+    color: #687887;
+}
+
+#faqList details {
+    background: white;
+    padding: 18px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+footer {
+    background: #17324d;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+footer a {
+    color: #70d6c2;
+}
+
+.admin-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.admin-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.admin-card h3 {
+    color: #17324d;
+    margin-bottom: 15px;
+}
+
+.admin-card input,
+.admin-card select {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.admin-card button {
+    margin: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #17324d;
+    color: white;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media(max-width:650px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+}
+
+@media print {
+    header, nav, button, .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .admin-card {
+        box-shadow: none;
+    }
+}

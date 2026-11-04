@@ -1,0 +1,50 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.uid == "TIQbJCgmJcci3iHHCzVoJitaGRD2";
+    }
+
+    // KATALOG BUKU
+    match /books/{bookId} {
+
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+
+    }
+
+    // PROFIL PERPUSTAKAAN
+    match /settings/{settingId} {
+
+      allow read: if true;
+      allow write: if isAdmin();
+
+    }
+
+    // FAQ
+    match /faqs/{faqId} {
+
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+
+    }
+
+    // TRANSAKSI
+    match /transactions/{transactionId} {
+
+      allow read, write: if isAdmin();
+
+    }
+
+    // DOKUMEN LAIN TIDAK DAPAT DIAKSES
+    match /{document=**} {
+
+      allow read, write: if false;
+
+    }
+
+  }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Perpustakaan SRMA 1 Pasuruan</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h2>📚 PERPUSTAKAAN SRMA</h2>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#profil">Profil</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#opac">OPAC</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+
+</header>
+
+<section class="hero" id="beranda">
+
+    <h1>Selamat Datang di Perpustakaan SUBASA</h1>
+
+    <h2>Sekolah Rakyat Menengah Atas
+    Terintegrasi 1 Pasuruan</h2>
+
+    <p>
+        Membaca Hari Ini, Membangun Masa Depan.
+    </p>
+
+    <a href="#opac" class="btn">
+        Telusuri Koleksi Buku
+    </a>
+
+</section>
+
+<section id="profil">
+
+    <h2>Profil Perpustakaan</h2>
+
+    <p id="profilText">
+        Perpustakaan SRMA Terintegrasi 1 Pasuruan
+        merupakan pusat sumber belajar yang
+        mendukung kegiatan literasi dan pembelajaran
+        peserta didik.
+    </p>
+
+    <h3>Visi</h3>
+
+    <p id="visiText">
+        Menjadi pusat literasi dan sumber belajar
+        yang nyaman, inovatif, dan inspiratif.
+    </p>
+
+    <h3>Misi</h3>
+
+    <p id="misiText">
+        Meningkatkan budaya membaca dan menyediakan
+        sumber informasi berkualitas.
+    </p>
+
+</section>
+
+<section id="layanan">
+
+    <h2>Informasi Layanan</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📖 Baca di Tempat</h3>
+            <p>Layanan membaca koleksi buku di perpustakaan.</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Peminjaman Buku</h3>
+            <p>Layanan peminjaman dan pengembalian buku.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔎 Penelusuran Buku</h3>
+            <p>Mencari koleksi melalui katalog OPAC.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="opac">
+
+    <h2>OPAC - Katalog Buku</h2>
+
+    <p>Cari buku berdasarkan judul, penulis, atau kategori.</p>
+
+    <input
+        type="text"
+        id="searchBook"
+        placeholder="Masukkan kata kunci..."
+    >
+
+    <button onclick="searchBooks()">Cari Buku</button>
+
+    <div id="bookResults"></div>
+
+</section>
+
+<section id="faq">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div id="faqList"></div>
+
+</section>
+
+<section id="kontak">
+
+    <h2>Kontak Perpustakaan</h2>
+
+    <p id="alamat">Alamat sekolah</p>
+
+    <p id="telepon">Nomor telepon perpustakaan</p>
+
+    <p id="email">Email perpustakaan</p>
+
+    <p>
+        Instagram:
+        <a id="instagram" href="#">Akun Instagram</a>
+    </p>
+
+</section>
+
+<footer>
+
+    <h3>Perpustakaan SRMA Terintegrasi 1 Pasuruan</h3>
+
+    <p>© 2026 Perpustakaan Sekolah</p>
+
+    <a href="admin.html">Login Petugas</a>
+
+</footer>
+
+<script type="module" src="public.js"></script>
+
+</body>
+</html>

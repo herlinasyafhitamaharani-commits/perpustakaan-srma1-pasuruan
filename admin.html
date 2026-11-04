@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Perpustakaan SRMA</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <h2>📚 ADMIN PERPUSTAKAAN</h2>
+    <a href="index.html" style="color:white">Halaman Pengunjung</a>
+</header>
+
+<div class="admin-container">
+
+    <!-- LOGIN -->
+    <div id="loginArea" class="admin-card">
+
+        <h2>Login Petugas</h2>
+
+        <p>Masukkan akun petugas perpustakaan.</p>
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email petugas"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button id="loginButton">Login</button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="hidden">
+
+        <div class="admin-card">
+            <h2>Dashboard Perpustakaan</h2>
+            <p>Selamat datang di panel administrasi.</p>
+            <p id="adminEmail"></p>
+            <button id="logoutButton">Logout</button>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Judul Buku</h3>
+                <h2 id="totalBooks">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Stok Buku</h3>
+                <h2 id="totalStock">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Sedang Dipinjam</h3>
+                <h2 id="totalBorrowed">0</h2>
+            </div>
+
+        </div>
+
+        <!-- DATA BUKU -->
+        <div class="admin-card">
+
+            <h3>Manajemen Koleksi Buku</h3>
+
+            <input type="hidden" id="bookId">
+
+            <input
+                id="bookTitle"
+                placeholder="Judul buku"
+            >
+
+            <input
+                id="bookAuthor"
+                placeholder="Nama penulis"
+            >
+
+            <input
+                id="bookCategory"
+                placeholder="Kategori"
+            >
+
+            <input
+                id="bookISBN"
+                placeholder="ISBN (opsional)"
+            >
+
+            <input
+                id="bookStock"
+                type="number"
+                min="0"
+                placeholder="Jumlah stok"
+            >
+
+            <button id="saveBook">Simpan Buku</button>
+
+            <button id="resetBook" type="button">
+                Kosongkan Form
+            </button>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Judul</th>
+                            <th>Penulis</th>
+                            <th>Stok</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookTable"></tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- PEMINJAMAN -->
+        <div class="admin-card">
+
+            <h3>Transaksi Peminjaman</h3>
+
+            <input
+                id="studentName"
+                placeholder="Nama siswa"
+            >
+
+            <input
+                id="studentClass"
+                placeholder="Kelas"
+            >
+
+            <select id="borrowBook">
+                <option value="">Pilih buku</option>
+            </select>
+
+            <label>Tanggal peminjaman</label>
+
+            <input
+                type="date"
+                id="borrowDate"
+            >
+
+            <label>Tanggal jatuh tempo</label>
+
+            <input
+                type="date"
+                id="dueDate"
+            >
+
+            <button id="saveBorrow">
+                Catat Peminjaman
+            </button>
+
+        </div>
+
+        <!-- DATA TRANSAKSI -->
+        <div class="admin-card">
+
+            <h3>Data Peminjaman dan Pengembalian</h3>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Siswa</th>
+                            <th>Kelas</th>
+                            <th>Buku</th>
+                            <th>Tanggal Pinjam</th>
+                            <th>Jatuh Tempo</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="transactionTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- PROFIL -->
+        <div class="admin-card">
+
+            <h3>Pengaturan Profil Perpustakaan</h3>
+
+            <textarea
+                id="editProfile"
+                placeholder="Profil perpustakaan"
+            ></textarea>
+
+            <textarea
+                id="editVision"
+                placeholder="Visi perpustakaan"
+            ></textarea>
+
+            <textarea
+                id="editMission"
+                placeholder="Misi perpustakaan"
+            ></textarea>
+
+            <input id="editAddress" placeholder="Alamat">
+            <input id="editPhone" placeholder="Telepon">
+            <input id="editEmail" placeholder="Email">
+            <input id="editInstagram" placeholder="Nama Instagram">
+            <input id="editInstagramUrl" placeholder="URL Instagram">
+
+            <button id="saveProfile">
+                Simpan Profil
+            </button>
+
+        </div>
+
+        <!-- FAQ -->
+        <div class="admin-card">
+
+            <h3>Kelola FAQ</h3>
+
+            <input
+                id="faqQuestion"
+                placeholder="Pertanyaan"
+            >
+
+            <textarea
+                id="faqAnswer"
+                placeholder="Jawaban"
+            ></textarea>
+
+            <button id="saveFAQ">
+                Tambahkan FAQ
+            </button>
+
+            <div id="adminFAQ"></div>
+
+        </div>
+
+        <!-- LAPORAN -->
+        <div class="admin-card">
+
+            <h3>Laporan Perpustakaan</h3>
+
+            <label>Mulai tanggal</label>
+
+            <input type="date" id="reportStart">
+
+            <label>Sampai tanggal</label>
+
+            <input type="date" id="reportEnd">
+
+            <button id="printReport">
+                Cetak Laporan
+            </button>
+
+            <button id="exportReport">
+                Unduh CSV
+            </button>
+
+            <div id="reportSummary"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
